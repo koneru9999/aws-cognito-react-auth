@@ -24,8 +24,8 @@ const Signup: React.FC = () => {
 
   const { value: name, bind: bindName } = useInput("");
   const { value: email, bind: bindEmail } = useInput("");
-  const { value: phone, bind: bindPhone } = useInput("");
-  const { value: company, bind: bindCompany } = useInput("");
+  // const { value: phone, bind: bindPhone } = useInput("");
+  // const { value: company, bind: bindCompany } = useInput("");
   const { value: password, bind: bindPassword } = useInput("");
   const { value: confirmPassword, bind: bindConfirmPassword } = useInput("");
 
@@ -48,8 +48,8 @@ const Signup: React.FC = () => {
         attributes: {
           email,
           name,
-          phone_number: phone,
-          "custom:company": company,
+          // phone_number: phone,
+          // "custom:company": company,
         },
       });
       Toast("Success!!", "Signup was successful", "success");
@@ -76,8 +76,8 @@ const Signup: React.FC = () => {
       </h1>
       <Field label="Name" {...bindName} />
       <Field label="Email" {...bindEmail} type="email" />
-      <Field label="Phone" {...bindPhone} type="tel" />
-      <Field label="Company" {...bindCompany} />
+      {/* <Field label="Phone" {...bindPhone} type="tel" /> */}
+      {/* <Field label="Company" {...bindCompany} /> */}
       <Field label="Password" type="password" {...bindPassword} />
       <Field
         label="Confirm Password"

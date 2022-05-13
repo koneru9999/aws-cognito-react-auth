@@ -4,6 +4,7 @@ import { styled } from "@material-ui/core/styles";
 import { useInput } from "./../utils/forms";
 import { Toast } from "./../utils/notifications";
 import { Auth } from "aws-amplify";
+import { CognitoHostedUIIdentityProvider } from "@aws-amplify/auth"
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import { Link, useHistory } from "react-router-dom";
@@ -63,7 +64,12 @@ const Signup: React.FC = () => {
       >
         {loading && <CircularProgress size={20} style={{ marginRight: 20 }} />}
         Login to Your Account
-      </Button>
+      </Button> &nbsp;
+      <Button
+        variant="contained"
+        color="primary"
+        size="large"
+        onClick={() => Auth.federatedSignIn({provider: CognitoHostedUIIdentityProvider.Google})}>Sign In with Google</Button>
       <DLink to="/signup">make a new account &rarr;</DLink>
     </form>
   );

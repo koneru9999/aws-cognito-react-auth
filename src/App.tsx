@@ -13,6 +13,13 @@ Amplify.configure({
   aws_cognito_region: COGNITO.REGION,
   aws_user_pools_id: COGNITO.USER_POOL_ID,
   aws_user_pools_web_client_id: COGNITO.APP_CLIENT_ID,
+  authenticationFlowType: 'USER_PASSWORD_AUTH',
+  oauth: {
+    domain: '',
+    scope: ['email', 'profile', 'openid'],
+    redirectSignIn: 'http://localhost:3000',
+    responseType: 'code' // or 'token', note that REFRESH token will only be generated when the responseType is code
+  },
 });
 
 const App: React.FC = () => {

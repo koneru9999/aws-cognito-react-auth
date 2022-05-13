@@ -1,5 +1,5 @@
 export const COGNITO = {
-  REGION: "",
+  REGION: "eu-central-1",
   USER_POOL_ID: "",
   APP_CLIENT_ID: "",
 };
